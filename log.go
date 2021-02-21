@@ -74,3 +74,7 @@ func Panic(v ...interface{}) {
 func Panicf(format string, v ...interface{}) {
 	defaultLogger.Panicf(format, v...)
 }
+
+func If(err error, v ...interface{}) {
+	defaultLogger.Catch(err, v)
+}

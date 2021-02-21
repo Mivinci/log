@@ -94,3 +94,9 @@ func (l *Logger) Panicf(format string, v ...interface{}) {
 	l.Output(lvPanic, s)
 	panic(s)
 }
+
+func (l *Logger) Catch(err error, v ...interface{}) {
+	if err != nil {
+		l.Error(v, err)
+	}
+}
